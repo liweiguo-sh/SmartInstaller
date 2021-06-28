@@ -100,10 +100,12 @@ namespace SmartInstaller {
             extTarget = UtilFile.Combine(TargetPath, ProjectConst.APP_EXE);
 
             desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
-            CreateShortcutOnDesktop(TargetPath, extTarget, ProjectConst.APP_SHORTCUT, ProjectConst.APP_SHORTCUT_DESC, desktopPath);
+            CreateShortcut(TargetPath, extTarget, ProjectConst.APP_SHORTCUT, ProjectConst.APP_SHORTCUT_DESC, desktopPath);
 
-            startupPath = Environment.GetFolderPath(Environment.SpecialFolder.CommonStartup);
-            CreateShortcutOnDesktop(TargetPath, extTarget, ProjectConst.APP_SHORTCUT, ProjectConst.APP_SHORTCUT_DESC, startupPath);
+            if (ProjectConst.FLAG_SHORTCUT_ON_STARTUP) {
+                startupPath = Environment.GetFolderPath(Environment.SpecialFolder.CommonStartup);
+                CreateShortcut(TargetPath, extTarget, ProjectConst.APP_SHORTCUT, ProjectConst.APP_SHORTCUT_DESC, startupPath);
+            }
 
             // -- 4. 立即运行 --
             if (UtilMessage.ShowConfirm(ProjectConst.APP_SHORTCUT_DESC + " 安装成功，是否立即运行？") == DialogResult.Yes) {
@@ -118,7 +120,7 @@ namespace SmartInstaller {
             this.Close();
         }
 
-        public static void CreateShortcutOnDesktop(string pathTarget, string extTarget, string shortcutName, string shortcutDesc, string shortcutPath) {
+        public static void CreateShortcut(string pathTarget, string extTarget, string shortcutName, string shortcutDesc, string shortcutPath) {
             shortcutPath = Path.Combine(shortcutPath, string.Format("{0}.lnk", shortcutName));
             // --------------------------------------------
             if (File.Exists(shortcutPath)) {
