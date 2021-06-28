@@ -15,6 +15,8 @@ namespace SmartInstaller.Common {
         public static string APP_EXE;                   // -- 目标程序名称 --
         public static string APP_SHORTCUT;              // -- 目标程序快捷方式名称(创建到桌面) --
         public static string APP_SHORTCUT_DESC;         // -- 目标程序快捷方式描述 --
+
+        public static string INSTALL_WELCOME;           // -- 目标程序快捷方式描述 --
         #endregion
         #region -- init --
         public static void ReadConfigIni() {
@@ -30,6 +32,7 @@ namespace SmartInstaller.Common {
             APP_EXE = iniFile.getValue("app_exe", "config.ini.app_exe error");
             APP_SHORTCUT = iniFile.getValue("app_shortcut", "config.ini.app_shortcut error");
             APP_SHORTCUT_DESC = iniFile.getValue("app_shortcut_desc", "config.ini.app_shortcut_desc error");
+            INSTALL_WELCOME = iniFile.getValue("install_welcome", "欢迎安装使用本程序，祝您工作愉快。");
         }
         #endregion
     }

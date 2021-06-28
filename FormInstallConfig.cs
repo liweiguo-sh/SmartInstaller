@@ -21,6 +21,7 @@ namespace SmartInstaller {
         private void FormInstallConfig_Load(object sender, EventArgs e) {
             InitInstallConfig();
 
+            lblWelcome.Text = ProjectConst.INSTALL_WELCOME;
             txtSource.Text = ProjectConst.SourcePath;
         }
         #endregion

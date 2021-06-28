@@ -30,6 +30,7 @@ namespace SmartInstaller {
             this.BtnSelectTargetPath = new System.Windows.Forms.Button();
             this.txtSource = new System.Windows.Forms.TextBox();
             this.BtnInstall = new System.Windows.Forms.Button();
+            this.lblWelcome = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtTarget
@@ -77,17 +78,29 @@ namespace SmartInstaller {
             this.BtnInstall.UseVisualStyleBackColor = true;
             this.BtnInstall.Click += new System.EventHandler(this.BtnInstall_Click);
             // 
+            // lblWelcome
+            // 
+            this.lblWelcome.AutoSize = true;
+            this.lblWelcome.ForeColor = System.Drawing.Color.Blue;
+            this.lblWelcome.Location = new System.Drawing.Point(79, 9);
+            this.lblWelcome.Name = "lblWelcome";
+            this.lblWelcome.Size = new System.Drawing.Size(269, 20);
+            this.lblWelcome.TabIndex = 4;
+            this.lblWelcome.Text = "感谢安装使用 码尚打印服务工作站 客户端";
+            // 
             // FormInstallConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(643, 335);
+            this.ClientSize = new System.Drawing.Size(643, 236);
+            this.Controls.Add(this.lblWelcome);
             this.Controls.Add(this.BtnInstall);
             this.Controls.Add(this.txtSource);
             this.Controls.Add(this.BtnSelectTargetPath);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtTarget);
             this.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
@@ -108,5 +121,6 @@ namespace SmartInstaller {
         private System.Windows.Forms.Button BtnSelectTargetPath;
         private System.Windows.Forms.TextBox txtSource;
         private System.Windows.Forms.Button BtnInstall;
+        private System.Windows.Forms.Label lblWelcome;
     }
 }
